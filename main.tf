@@ -1,9 +1,10 @@
 # ------------------------------------------------------------------------------
 # File: main.tf
+# Repo:  https://codeberg.org/arpatek/terraform-xo
 # Description: Terraform configuration to provision a virtual machine on XCP-ng
 #              via Xen Orchestra (XO) using a cloud-init template.
 #
-# Author: Juan J Garcia (0x1G)
+# Author: Juan J Garcia (arpatek)
 # Created: 2025-06-12
 # License: MIT
 # Notes:
