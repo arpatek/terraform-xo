@@ -34,8 +34,8 @@ Included features:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/0xjuang/terraform-lab.git
-cd terraform-xo-vm
+git clone https://codeberg.org/arpatek/terraform-xo.git
+cd terraform-xo
 ```
 
 ### 2. Configure your variables
@@ -105,9 +105,12 @@ To avoid overprovisioning:
 ### Provider error: registry.local/local/xenorchestra
 
 - This configuration uses a local provider source.
-- You must have the `xenorchestra` provider installed locally at:
+- You must have the `xenorchestra` provider binary installed at:
   `~/.terraform.d/plugins/registry.local/local/xenorchestra/<version>/`
-- Alternatively, adjust the `source` block to use a public registry provider if available.
+- The included `.terraformrc` configures Terraform to use a local filesystem mirror. To activate it, run:
+  ```bash
+  export TF_CLI_CONFIG_FILE=./.terraformrc
+  ```
 
 ### cloud-init did not apply
 
@@ -126,7 +129,7 @@ To avoid overprovisioning:
 ## File Structure
 
 ```
-terraform-lab/
+terraform-xo/
 ├── main.tf                 # Terraform logic and VM declaration
 ├── variables.tf            # Input variables used by Terraform
 ├── terraform.tfvars.tpl    # Example tfvars file (copy and edit before applying)

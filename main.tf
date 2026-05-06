@@ -13,6 +13,8 @@
 # ------------------------------------------------------------------------------
 
 terraform {
+  required_version = ">= 1.3"
+
   required_providers {
     xenorchestra = {
       source  = "registry.local/local/xenorchestra"    # Custom/local registry path for the XO provider
@@ -39,7 +41,8 @@ data "xenorchestra_template" "debian" {
 
 # Lookup the virtual network by name — usually tied to "eth0"
 data "xenorchestra_network" "default" {
-  name_label = var.xo_network}
+  name_label = var.xo_network
+}
 
 # Main VM resource definition
 resource "xenorchestra_vm" "devvm" {

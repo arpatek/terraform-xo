@@ -1,8 +1,9 @@
 # XO API token used to authenticate with the Xen Orchestra server
 # Marked sensitive to avoid exposing in CLI or logs
 variable "xo_token" {
-  type      = string
-  sensitive = true
+  description = "API token for Xen Orchestra authentication"
+  type        = string
+  sensitive   = true
 }
 
 # SHA-512 hashed password for the VM user created via cloud-init
@@ -15,8 +16,8 @@ variable "user_password_hash" {
 
 # Web socket for Xen Orchestra server
 variable "xo_url" {
-    description = "Web socket URL"
-    type        = string
+  description = "WebSocket URL for the Xen Orchestra API (e.g. ws://xo.local)"
+  type        = string
 }
 
 # The Storage Repository (SR) to attach to the VM's virtual disk.

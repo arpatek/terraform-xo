@@ -36,6 +36,6 @@ vm_user  = "INSERT_YOUR_VM_USERNAME"    # The main user account created via clou
 hostname = "INSERT_YOUR_VM_HOSTNAME"    # Internal VM hostname
 
 # VM Resources
-cpu        = INSERT_YOUR_CPU_COUNT    # Number of vCPUs
-memory_gb  = INSERT_YOUR_RAM_SIZE     # RAM in GB
-disk_gb    = INSERT_YOUR_DISK_SIZE    # Disk size in GB
+cpu        = 2     # Number of vCPUs
+memory_gb  = 2     # RAM in GB
+disk_gb    = 16    # Disk size in GB
