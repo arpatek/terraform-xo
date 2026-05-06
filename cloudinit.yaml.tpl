@@ -1,6 +1,7 @@
 #cloud-config
 # ------------------------------------------------------------------------------
 # File: cloudinit.yaml.tpl
+# Repo:  https://codeberg.org/arpatek/terraform-xo
 # Description: Cloud-init template used by Terraform to provision and configure
 #              a VM on XCP-ng via Xen Orchestra (XO).
 #
@@ -10,7 +11,7 @@
 #   - ${username}: The name of the user to create
 #   - ${password_hash}: The hashed password for the user (SHA-512)
 #
-# Author: Juan J Garcia (arpatek)
+# Author: Juan Garcia (arpatek)
 # Created: 2025-06-12
 # License: MIT
 # ------------------------------------------------------------------------------
@@ -57,13 +58,11 @@ packages:
 # Run a basic initialization script to test Python and log output
 runcmd:
   - deluser --remove-home debian || true    # Remove default Debian template user (runs once on first boot)
-  - cd /home/${username}
-  - git clone https://codeberg.org/arpatek/snaputil.git
-  - cd /home/${username}/snaputil
-  - python3 -m venv venv
-  - ./venv/bin/pip install psutil rich prettytable
-  - chmod +x snaputil.py
-  - ./venv/bin/python snaputil.py > /home/${username}/snapshot.log 2>&1
+  - git clone https://codeberg.org/arpatek/snaputil.git /home/${username}/snaputil
+  - python3 -m venv /home/${username}/snaputil/venv
+  - /home/${username}/snaputil/venv/bin/pip install psutil rich prettytable
+  - chmod +x /home/${username}/snaputil/snaputil.py
+  - /home/${username}/snaputil/venv/bin/python /home/${username}/snaputil/snaputil.py > /home/${username}/snapshot.log 2>&1
   - chown -R ${username}:${username} /home/${username}
   - cat /home/${username}/snapshot.log
 

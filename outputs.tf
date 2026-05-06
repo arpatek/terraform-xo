@@ -1,6 +1,11 @@
 # ------------------------------------------------------------------------------
 # File: outputs.tf
+# Repo:  https://codeberg.org/arpatek/terraform-xo
 # Description: Output values exposed after terraform apply.
+#
+# Author: Juan Garcia (arpatek)
+# Created: 2025-06-12
+# License: MIT
 # ------------------------------------------------------------------------------
 
 output "vm_names" {
