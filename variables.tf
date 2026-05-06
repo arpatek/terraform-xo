@@ -1,3 +1,13 @@
+# ------------------------------------------------------------------------------
+# File: variables.tf
+# Repo:  https://codeberg.org/arpatek/terraform-xo
+# Description: Input variable definitions for the terraform-xo provisioner.
+#
+# Author: Juan Garcia (arpatek)
+# Created: 2025-06-12
+# License: MIT
+# ------------------------------------------------------------------------------
+
 # XO API token used to authenticate with the Xen Orchestra server
 # Marked sensitive to avoid exposing in CLI or logs
 variable "xo_token" {
@@ -9,7 +19,7 @@ variable "xo_token" {
 # SHA-512 hashed password for the VM user created via cloud-init
 # Example: generated using `openssl passwd -6`
 variable "user_password_hash" {
-  description = "SHA512-hashed user password for cloudadmin"
+  description = "SHA-512 hashed password for the VM user"
   type        = string
   sensitive   = true
 }
@@ -51,6 +61,7 @@ variable "vm_description" {
   default     = "Provisioned by Terraform via XO"
 }
 
+# Number of VMs to provision in a single apply
 variable "vm_count" {
   description = "Number of virtual machines to create"
   type        = number
