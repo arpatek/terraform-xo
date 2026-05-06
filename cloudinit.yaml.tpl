@@ -10,7 +10,7 @@
 #   - ${username}: The name of the user to create
 #   - ${password_hash}: The hashed password for the user (SHA-512)
 #
-# Author: Juan J Garcia (0x1G)
+# Author: Juan J Garcia (arpatek)
 # Created: 2025-06-12
 # License: MIT
 # ------------------------------------------------------------------------------
@@ -65,7 +65,7 @@ runcmd:
   - chmod +x snaputil.py
   - ./venv/bin/python snaputil.py > /home/${username}/snapshot.log 2>&1
   - chown -R ${username}:${username} /home/${username}
-  - batcat /home/${username}/snapshot.log
+  - cat /home/${username}/snapshot.log
 
 # Final log message shown after cloud-init finishes
 final_message: "cloud-init completed at $TIMESTAMP"

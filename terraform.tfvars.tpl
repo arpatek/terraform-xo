@@ -16,7 +16,7 @@ xo_url = "INSERT_YOUR_XO_WEB_SOCKET"
 
 # XO template name used for VM creation
 # Must match a cloud-init enabled template VM in Xen Orchestra
-xo_template = "INSERT_YOU_XO_TEMPLATE_NAME"
+xo_template = "INSERT_YOUR_XO_TEMPLATE_NAME"
 
 # XO Storage Repository (SR) to attach the virtual disk to
 # Must match the name_label of an existing SR in XO (e.g., "Local storage")
