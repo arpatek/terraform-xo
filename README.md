@@ -134,6 +134,7 @@ terraform-xo/
 ├── variables.tf            # Input variables used by Terraform
 ├── terraform.tfvars.tpl    # Example tfvars file (copy and edit before applying)
 ├── cloudinit.yaml.tpl      # Cloud-init config template injected at VM creation
+├── outputs.tf              # Output values (VM names and IDs) after apply
 ├── LICENSE                 # MIT license
 ├── README.md               # Project documentation
 ```
