@@ -54,19 +54,16 @@ packages:
   - most            # Terminal pager alternative to less
   - bat             # A cat clone with syntax highlighting
 
-# Remove the default 'debian' user if present
-bootcmd:
-  - deluser --remove-home debian || true
-
 # Run a basic initialization script to test Python and log output
 runcmd:
+  - deluser --remove-home debian || true    # Remove default Debian template user (runs once on first boot)
   - cd /home/${username}
-  - git clone https://github.com/0xjuang/gtop.git
-  - cd /home/${username}/gtop
+  - git clone https://codeberg.org/arpatek/snaputil.git
+  - cd /home/${username}/snaputil
   - python3 -m venv venv
-  - ./venv/bin/pip install psutil prettytable
-  - chmod +x gtop.py
-  - ./venv/bin/python gtop.py > /home/${username}/snapshot.log 2>&1
+  - ./venv/bin/pip install psutil rich prettytable
+  - chmod +x snaputil.py
+  - ./venv/bin/python snaputil.py > /home/${username}/snapshot.log 2>&1
   - chown -R ${username}:${username} /home/${username}
   - batcat /home/${username}/snapshot.log
 
