@@ -15,7 +15,7 @@ Included features:
 - Customizable CPU, memory, and disk allocation
 - Multi-VM provisioning via `count`
 - User setup with password hash
-- Post-deploy package install and test script execution
+- Post-deploy package install and system snapshot via [snaputil](https://codeberg.org/arpatek/snaputil)
 
 ---
 
